@@ -4,7 +4,6 @@ services:
     build: ./nginx
     container_name: nginx
     #environment:
-    #  TZ: Asia/Tokyo # Please set time zone if you want to change it.
     volumes:
       - ./logs/nginx/:/var/log/nginx/
       - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
@@ -53,7 +52,6 @@ services:
       UNICORN_WOKER_KILLER_MEMORY_MAX: 256  # Memory max threshold. Unit is MB.
       UNICORN_WOKER_KILLER_CHECK_CYCLE: 16
       UNICORN_WOKER_KILLER_VERBOSE: 0
-      #TZ: Asia/Tokyo # Please set time zone if you want to change it.
     hostname: redmine
     expose:
       - "3000"
